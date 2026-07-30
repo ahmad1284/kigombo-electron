@@ -28,7 +28,7 @@ Needs Node 20+, npm, git, and a C toolchain (`build-essential` on Debian/Ubuntu,
 
 ```sh
 git clone https://github.com/ahmad1284/kigombo-electron.git
-cd kigombo
+cd kigombo-electron
 ./scripts/install-linux.sh
 ```
 
