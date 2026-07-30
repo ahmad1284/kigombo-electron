@@ -27,7 +27,7 @@ Needs Node 20+, npm, git, and a C toolchain (`build-essential` on Debian/Ubuntu,
 `base-devel` on Arch) so the SQLite driver can compile.
 
 ```sh
-git clone https://github.com/ahmad1284/kigombo.git
+git clone https://github.com/ahmad1284/kigombo-electron.git
 cd kigombo
 ./scripts/install-linux.sh
 ```
