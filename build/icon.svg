@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Ledger sheet: a baseline with money in above it and money out below. -->
+  <rect width="512" height="512" rx="96" fill="#17211c"/>
+  <g>
+    <rect x="112" y="132" width="72" height="124" fill="#1c6b4d"/>
+    <rect x="220" y="188" width="72" height="68" fill="#1c6b4d"/>
+    <rect x="328" y="104" width="72" height="152" fill="#1c6b4d"/>
+    <rect x="112" y="256" width="72" height="52" fill="#a32d1e"/>
+    <rect x="220" y="256" width="72" height="124" fill="#a32d1e"/>
+    <rect x="328" y="256" width="72" height="80" fill="#a32d1e"/>
+  </g>
+  <rect x="80" y="250" width="352" height="12" fill="#9a7b34"/>
+</svg>

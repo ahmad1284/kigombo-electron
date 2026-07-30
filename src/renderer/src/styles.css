@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+/*
+ * Kigombo is a ledger, not a dashboard. The palette is ruled-paper: a faint
+ * green-grey sheet, hairline rules, and the two colours a bookkeeper actually
+ * uses — ink green for money in, ink red for money out.
+ */
+@theme {
+  --color-sheet: #f1f3ef;
+  --color-sheet-raised: #f8faf6;
+  --color-rule: #d7ddd3;
+  --color-rule-strong: #b3bdae;
+  --color-ink: #17211c;
+  --color-ink-soft: #5b675f;
+  --color-ink-faint: #8b968f;
+  --color-credit: #1c6b4d;
+  --color-debit: #a32d1e;
+  --color-brass: #9a7b34;
+
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'DejaVu Sans Mono', Menlo, monospace;
+}
+
+/* Theme tokens are plain custom properties, so night mode is a re-declaration. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-sheet: #14181a;
+    --color-sheet-raised: #1b2023;
+    --color-rule: #2a3134;
+    --color-rule-strong: #3c4549;
+    --color-ink: #e7ece8;
+    --color-ink-soft: #9aa8a1;
+    --color-ink-faint: #6c7a74;
+    --color-credit: #58c295;
+    --color-debit: #e08272;
+    --color-brass: #d0a95a;
+  }
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-sheet);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Digits must stack in columns — this is the whole point of a ledger. */
+.tnum {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-sheet);
+}
+
+/* Thin, unobtrusive scrollbars — the sheet should stay the loudest thing. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rule-strong);
+  border-radius: 999px;
+  border: 3px solid var(--color-sheet);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "kigombo",
+  "version": "0.1.0",
+  "description": "Personal finance tracker — money in, money out, across wallets",
+  "main": "./out/main/index.js",
+  "author": "ahmad",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "start": "electron-vite preview",
+    "build": "npm run typecheck && electron-vite build",
+    "package": "npm run build && electron-builder --linux AppImage",
+    "postinstall": "electron-builder install-app-deps",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "npm run build && playwright test"
+  },
+  "build": {
+    "appId": "dev.ahmad.kigombo",
+    "productName": "Kigombo",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": ["out/**/*", "package.json"],
+    "linux": {
+      "target": ["AppImage"],
+      "synopsis": "Personal cash ledger",
+      "category": "Office;Finance",
+      "icon": "build/icon.png",
+      "syncDesktopName": true,
+      "desktop": {
+        "entry": {
+          "Name": "Kigombo",
+          "Comment": "Personal cash ledger — money in, money out",
+          "Keywords": "finance;money;budget;ledger;"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.2",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.18.9",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vitest": "^4.1.10"
+  }
+}

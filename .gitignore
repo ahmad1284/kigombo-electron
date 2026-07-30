@@ -1,0 +1,10 @@
+node_modules/
+out/
+dist/
+release/
+test-results/
+playwright-report/
+.e2e-userdata/
+*.tsbuildinfo
+*.log
+.claude/
